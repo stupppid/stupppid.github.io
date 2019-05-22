@@ -90,7 +90,7 @@ node_modules/
 build/
 #dist/
 rev/
-dist/
+#dist/
 target/
 */target/
 /.idea/
