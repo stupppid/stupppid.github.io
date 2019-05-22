@@ -1,7 +1,102 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
 }
 
-@import "snow";
+@mixin move-from-top($p0, $p1, $suffix) {
+  @keyframes move-from-top-#{$suffix} {
+    0% {
+      transform: $p0;
+    }
+    100% {
+      transform: $p1;
+    }
+  }
+}
+
+#app {
+  height: 100vh;
+  text-align: center;
+  color: white;
+  position: relative;
+  z-index: 1;
+
+  $anim-1-time: 1s;
+
+  @keyframes fade {
+    0% {
+      color: white;
+    }
+    50% {
+      color: transparent;
+    }
+    100% {
+      color: white;
+    }
+  }
+
+  @include move-from-top(translate(0, -20vh), translate(0,30vh), 'top-panel');
+  @include move-from-top(translate(0, 100vh), translate(0,58vh), 'bottom-panel');
+
+  @keyframes fade-in-from-left {
+    0% {
+      opacity: 0;
+      transform: translate(-100vw);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+  }
+
+  >.top-panel {
+    position: absolute;
+    width: 100%;
+    animation-name: move-from-top-top-panel;
+    animation-duration: $anim-1-time;
+    animation-fill-mode: forwards;
+    hr {
+      transform: translate(-100vw);
+      animation-name: fade-in-from-left;
+      animation-duration: 300ms;
+      animation-delay: $anim-1-time;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+    }
+
+    >.title {
+      word-spacing: 2.5em;
+      font-size: 2.5em;
+      letter-spacing: 0.6em;
+      display: inline-block;
+      .end-letter {
+        letter-spacing: 0;
+      }
+
+      animation-name: fade;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+  }
+
+  >.bottom-panel {
+    position: absolute;
+    width: 100%;
+    animation-name: move-from-top-bottom-panel;
+    animation-duration: $anim-1-time;
+    animation-fill-mode: forwards;
+
+    >.process {
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 72%;
+      display: flex;
+    }
+  }
+
+}
+
+@import "../lib/snow/index";
+@import "../lib/process/index";

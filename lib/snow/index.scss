@@ -10,9 +10,13 @@
 }
 
 .snow-group {
+  background-color: black;
+  transition: background-color 2s;
   position: fixed;
   top: 0;
   left: 0;
+  height: 100%;
+  width: 100%;
   /* v1/v2 ~= square root of r2/r1 */
   /* size duration move-width number */
   $speed-index: 1;
@@ -57,4 +61,8 @@
       background-image: $background-image;
     }
   }
+}
+
+.snow-stop {
+  background-color: transparent;
 }
