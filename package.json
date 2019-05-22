@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/stupppid/stupppid.github.io#readme",
   "devDependencies": {
+    "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.17.2",
