@@ -1,0 +1,42 @@
+@mixin move-from-top($p0, $p1, $suffix) {
+  @keyframes move-from-top-#{$suffix} {
+    0% {
+      transform: $p0;
+    }
+    100% {
+      transform: $p1;
+    }
+  }
+}
+
+@keyframes magic-linear-right {
+  0% {
+    transform: translate(-50%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes fade-forever {
+  0% {
+    color: white;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: white;
+  }
+}
+
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translate(-100vw);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

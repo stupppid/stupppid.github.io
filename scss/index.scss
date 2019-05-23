@@ -1,101 +1,96 @@
+@import "animation";
+
+html {
+  font-size: 5vw;
+}
+
 body {
   margin: 0;
   padding: 0;
-}
-
-@mixin move-from-top($p0, $p1, $suffix) {
-  @keyframes move-from-top-#{$suffix} {
-    0% {
-      transform: $p0;
-    }
-    100% {
-      transform: $p1;
-    }
-  }
+  overflow: hidden;
 }
 
 #app {
-  height: 100vh;
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1;
+  .welcome {
+    $anim-1-time: 1s;
+    $anim-hr-1-time: 300ms;
 
-  $anim-1-time: 1s;
+    height: 100vh;
+    text-align: center;
+    color: white;
+    position: relative;
+    .snow-group {
+      transition: background-color 2s,transform 300ms;
+    }
 
-  @keyframes fade {
-    0% {
-      color: white;
-    }
-    50% {
-      color: transparent;
-    }
-    100% {
-      color: white;
-    }
-  }
+    @include move-from-top(translate(0, -20vh), translate(0, calc(40vh - 2rem)), 'top-panel');
+    @include move-from-top(translate(0, 100vh), translate(0, calc(50vh + 2rem)), 'bottom-panel');
 
-  @include move-from-top(translate(0, -20vh), translate(0,30vh), 'top-panel');
-  @include move-from-top(translate(0, 100vh), translate(0,58vh), 'bottom-panel');
-
-  @keyframes fade-in-from-left {
-    0% {
-      opacity: 0;
-      transform: translate(-100vw);
-    }
-    100% {
-      opacity: 1;
-      transform: translate(0);
-    }
-  }
-
-  >.top-panel {
-    position: absolute;
-    width: 100%;
-    animation-name: move-from-top-top-panel;
-    animation-duration: $anim-1-time;
-    animation-fill-mode: forwards;
-    hr {
-      transform: translate(-100vw);
-      animation-name: fade-in-from-left;
-      animation-duration: 300ms;
-      animation-delay: $anim-1-time;
-      animation-timing-function: linear;
+    >.top-panel {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      animation-name: move-from-top-top-panel;
+      animation-duration: $anim-1-time;
       animation-fill-mode: forwards;
-    }
+      filter: drop-shadow(0px 0px 3px white);
 
-    >.title {
-      word-spacing: 2.5em;
-      font-size: 2.5em;
-      letter-spacing: 0.6em;
-      display: inline-block;
-      .end-letter {
-        letter-spacing: 0;
+      div[hr] {
+        height: 1px;
+        transform: translate(-100vw);
+        animation-name: fade-in-from-left;
+        animation-duration: $anim-hr-1-time;
+        animation-delay: $anim-1-time;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
       }
 
-      animation-name: fade;
-      animation-duration: 6s;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
+      div[hr] > div {
+        width: 200%;
+        height: 100%;
+        transform: translate(-50%);
+        background: linear-gradient(to right, red, blue, red,blue,red);
+        animation-name: magic-linear-right;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-delay: $anim-hr-1-time + $anim-1-time;
+      }
+
+      >.title {
+        word-spacing: 0.5rem;
+        font-size: 0.5rem;
+        letter-spacing: 0.25rem;
+        display: inline-block;
+        .end-letter {
+          letter-spacing: 0;
+        }
+
+        animation-name: fade-forever;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+      }
+    }
+
+    >.bottom-panel {
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      animation-name: move-from-top-bottom-panel;
+      animation-duration: $anim-1-time;
+      animation-fill-mode: forwards;
+      filter: drop-shadow(0px 0px 3px white);
+
+      >.process {
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 72%;
+        display: flex;
+      }
     }
   }
-
-  >.bottom-panel {
-    position: absolute;
-    width: 100%;
-    animation-name: move-from-top-bottom-panel;
-    animation-duration: $anim-1-time;
-    animation-fill-mode: forwards;
-
-    >.process {
-      left: 0;
-      right: 0;
-      margin: auto;
-      width: 72%;
-      display: flex;
-    }
-  }
-
 }
 
 @import "../lib/snow/index";

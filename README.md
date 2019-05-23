@@ -1,2 +1,3 @@
 # stupppid.github.io
-git homepage
+
+[homepage](https://stupppid.github.io/dist)

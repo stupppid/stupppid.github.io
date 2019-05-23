@@ -15,15 +15,15 @@
   border-color: white;
   border-style: solid;
   border-radius: 3px;
-  height: 32px;
+  height: 0.5rem;
   width: 100%;
+  min-height: 16px;
 
   >.process-entity {
     margin: 3px;
     background-color: white;
     height: calc(100% - 6px);
     width: calc(100% - 6px);
-    transition: all 100ms;
 
     animation-name: fade-bg-color;
     animation-duration: 6s;
@@ -34,8 +34,8 @@
 .number-span {
   width: 3em;
   text-align: right;
-  font-size: 1.5em;
-  text-indent: 1em;
+  font-size: 0.4rem;
+  text-indent: 16px;
   display: block;
   position: relative;
   white-space: nowrap;

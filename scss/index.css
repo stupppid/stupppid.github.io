@@ -1,30 +1,15 @@
-body {
-  margin: 0;
-  padding: 0; }
-
-#app {
-  height: 100vh;
-  text-align: center;
-  color: white;
-  position: relative;
-  z-index: 1; }
-@keyframes fade {
+@keyframes magic-linear-right {
+  0% {
+    transform: translate(-50%); }
+  100% {
+    transform: translate(0); } }
+@keyframes fade-forever {
   0% {
     color: white; }
   50% {
     color: transparent; }
   100% {
     color: white; } }
-@keyframes move-from-top-top-panel {
-  0% {
-    transform: translate(0, -20vh); }
-  100% {
-    transform: translate(0, 30vh); } }
-@keyframes move-from-top-bottom-panel {
-  0% {
-    transform: translate(0, 100vh); }
-  100% {
-    transform: translate(0, 58vh); } }
 @keyframes fade-in-from-left {
   0% {
     opacity: 0;
@@ -32,37 +17,77 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
-  #app > .top-panel {
+html {
+  font-size: 5vw; }
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden; }
+
+#app .welcome {
+  height: 100vh;
+  text-align: center;
+  color: white;
+  position: relative; }
+  #app .welcome .snow-group {
+    transition: background-color 2s,transform 300ms; }
+@keyframes move-from-top-top-panel {
+  0% {
+    transform: translate(0, -20vh); }
+  100% {
+    transform: translate(0, calc(40vh - 2rem)); } }
+@keyframes move-from-top-bottom-panel {
+  0% {
+    transform: translate(0, 100vh); }
+  100% {
+    transform: translate(0, calc(50vh + 2rem)); } }
+  #app .welcome > .top-panel {
+    z-index: 1;
     position: absolute;
     width: 100%;
     animation-name: move-from-top-top-panel;
     animation-duration: 1s;
-    animation-fill-mode: forwards; }
-    #app > .top-panel hr {
+    animation-fill-mode: forwards;
+    filter: drop-shadow(0px 0px 3px white); }
+    #app .welcome > .top-panel div[hr] {
+      height: 1px;
       transform: translate(-100vw);
       animation-name: fade-in-from-left;
       animation-duration: 300ms;
       animation-delay: 1s;
       animation-timing-function: linear;
       animation-fill-mode: forwards; }
-    #app > .top-panel > .title {
-      word-spacing: 2.5em;
-      font-size: 2.5em;
-      letter-spacing: 0.6em;
+    #app .welcome > .top-panel div[hr] > div {
+      width: 200%;
+      height: 100%;
+      transform: translate(-50%);
+      background: linear-gradient(to right, red, blue, red, blue, red);
+      animation-name: magic-linear-right;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 1300ms; }
+    #app .welcome > .top-panel > .title {
+      word-spacing: 0.5rem;
+      font-size: 0.5rem;
+      letter-spacing: 0.25rem;
       display: inline-block;
-      animation-name: fade;
+      animation-name: fade-forever;
       animation-duration: 6s;
       animation-timing-function: linear;
       animation-iteration-count: infinite; }
-      #app > .top-panel > .title .end-letter {
+      #app .welcome > .top-panel > .title .end-letter {
         letter-spacing: 0; }
-  #app > .bottom-panel {
+  #app .welcome > .bottom-panel {
+    z-index: 1;
     position: absolute;
     width: 100%;
     animation-name: move-from-top-bottom-panel;
     animation-duration: 1s;
-    animation-fill-mode: forwards; }
-    #app > .bottom-panel > .process {
+    animation-fill-mode: forwards;
+    filter: drop-shadow(0px 0px 3px white); }
+    #app .welcome > .bottom-panel > .process {
       left: 0;
       right: 0;
       margin: auto;
@@ -89,50 +114,50 @@ body {
     background-attachment: fixed;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-duration: 10s;
+    animation-duration: 16.66667s;
     animation-name: anim-1;
     background-image: radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent); }
 @keyframes anim-1 {
   0% {
-    background-position: -78vh, 71vw -88vh, 12vw -23vh, -3vw -54vh, 20vw -27vh, 64vw -95vh, 11vw -74vh, -5vw -2vh, 86vw -36vh, 45vw -99vh, 81vw -13vh, 50vw -54vh, 24vw -18vh, 5vw -46vh, 3vw -33vh, 80vw -37vh, 98vw -82vh, 62vw -16vh, 54vw -38vh, 20vw -27vh, -2vw -56vh, 15vw -28vh, 1vw -13vh, 61vw -97vh, 80vw -74vh, 24vw -92vh, 50vw -67vh, 10vw -81vh, 28vw -33vh, 41vw -73vh, 32vw -81vh, 70vw -47vh, 91vw -14vh, 11vw -99vh, 34vw -96vh, 81vw -59vh, 74vw -92vh, 72vw -83vh, 93vw -44vh, 49vw -64vh, 54vw -89vh, -6vw -91vh, 3vw -98vh, 65vw -28vh, 69vw -12vh, 51vw -78vh, 17vw -62vh, 73vw -94vh, 4vw -44vh, 70vw -15vh, 58vw -35vh, 96vw -66vh, -2vw -62vh, 22vw -70vh, 82vw -78vh, 6vw -6vh, 43vw -15vh, -4vw -51vh, 17vw -42vh, 21vw -80vh, 28vw 22vh, 81vw 12vh, 22vw 77vh, 7vw 46vh, 30vw 73vh, 74vw 5vh, 21vw 26vh, 5vw 98vh, 96vw 64vh, 55vw 1vh, 91vw 87vh, 60vw 46vh, 34vw 82vh, 15vw 54vh, 13vw 67vh, 90vw 63vh, 108vw 18vh, 72vw 84vh, 64vw 62vh, 30vw 73vh, 8vw 44vh, 25vw 72vh, 11vw 87vh, 71vw 3vh, 90vw 26vh, 34vw 8vh, 60vw 33vh, 20vw 19vh, 38vw 67vh, 51vw 27vh, 42vw 19vh, 80vw 53vh, 101vw 86vh, 21vw 1vh, 44vw 4vh, 91vw 41vh, 84vw 8vh, 82vw 17vh, 103vw 56vh, 59vw 36vh, 64vw 11vh, 4vw 9vh, 13vw 2vh, 75vw 72vh, 79vw 88vh, 61vw 22vh, 27vw 38vh, 83vw 6vh, 14vw 56vh, 80vw 85vh, 68vw 65vh, 106vw 34vh, 8vw 38vh, 32vw 30vh, 92vw 22vh, 16vw 94vh, 53vw 85vh, 6vw 49vh, 27vw 58vh, 31vw 20vh, 38vw; }
+    background-position: -42vh, 98vw -30vh, 26vw -22vh, 92vw -55vh, 53vw -66vh, 21vw -37vh, 18vw -40vh, 5vw -57vh, 79vw -25vh, 70vw -35vh, 7vw -71vh, 92vw -37vh, 60vw -81vh, 34vw -33vh, 53vw -70vh, 63vw -39vh, 35vw -51vh, 5vw -56vh, 42vw -54vh, 8vw 0vh, 23vw -78vh, 54vw -18vh, 38vw -49vh, 53vw -4vh, 61vw -26vh, 72vw -28vh, 49vw -24vh, 75vw -58vh, 87vw -34vh, 48vw -96vh, 72vw -26vh, 39vw -90vh, 16vw -74vh, 82vw -17vh, 99vw -93vh, 23vw -79vh, 4vw -16vh, 92vw -90vh, 33vw -28vh, 75vw -41vh, 59vw -53vh, 17vw -27vh, 99vw -87vh, 20vw -48vh, 20vw -16vh, 51vw -67vh, 12vw -10vh, 92vw -53vh, 29vw -81vh, 10vw -50vh, 82vw -59vh, 16vw -62vh, 53vw -85vh, 30vw -9vh, 48vw -22vh, 80vw -91vh, 17vw -1vh, 93vw -36vh, 2vw -17vh, 74vw -60vh, 21vw 58vh, 98vw 70vh, 26vw 78vh, 92vw 45vh, 53vw 34vh, 21vw 63vh, 18vw 60vh, 5vw 43vh, 79vw 75vh, 70vw 65vh, 7vw 29vh, 92vw 63vh, 60vw 19vh, 34vw 67vh, 53vw 30vh, 63vw 61vh, 35vw 49vh, 5vw 44vh, 42vw 46vh, 8vw 100vh, 23vw 22vh, 54vw 82vh, 38vw 51vh, 53vw 96vh, 61vw 74vh, 72vw 72vh, 49vw 76vh, 75vw 42vh, 87vw 66vh, 48vw 4vh, 72vw 74vh, 39vw 10vh, 16vw 26vh, 82vw 83vh, 99vw 7vh, 23vw 21vh, 4vw 84vh, 92vw 10vh, 33vw 72vh, 75vw 59vh, 59vw 47vh, 17vw 73vh, 99vw 13vh, 20vw 52vh, 20vw 84vh, 51vw 33vh, 12vw 90vh, 92vw 47vh, 29vw 19vh, 10vw 50vh, 82vw 41vh, 16vw 38vh, 53vw 15vh, 30vw 91vh, 48vw 78vh, 80vw 9vh, 17vw 99vh, 93vw 64vh, 2vw 83vh, 74vw 40vh, 21vw; }
   100% {
-    background-position: 22vh, 81vw 12vh, 22vw 77vh, 7vw 46vh, 30vw 73vh, 74vw 5vh, 21vw 26vh, 5vw 98vh, 96vw 64vh, 55vw 1vh, 91vw 87vh, 60vw 46vh, 34vw 82vh, 15vw 54vh, 13vw 67vh, 90vw 63vh, 108vw 18vh, 72vw 84vh, 64vw 62vh, 30vw 73vh, 8vw 44vh, 25vw 72vh, 11vw 87vh, 71vw 3vh, 90vw 26vh, 34vw 8vh, 60vw 33vh, 20vw 19vh, 38vw 67vh, 51vw 27vh, 42vw 19vh, 80vw 53vh, 101vw 86vh, 21vw 1vh, 44vw 4vh, 91vw 41vh, 84vw 8vh, 82vw 17vh, 103vw 56vh, 59vw 36vh, 64vw 11vh, 4vw 9vh, 13vw 2vh, 75vw 72vh, 79vw 88vh, 61vw 22vh, 27vw 38vh, 83vw 6vh, 14vw 56vh, 80vw 85vh, 68vw 65vh, 106vw 34vh, 8vw 38vh, 32vw 30vh, 92vw 22vh, 16vw 94vh, 53vw 85vh, 6vw 49vh, 27vw 58vh, 31vw 20vh, 38vw 122vh, 91vw 112vh, 32vw 177vh, 17vw 146vh, 40vw 173vh, 84vw 105vh, 31vw 126vh, 15vw 198vh, 106vw 164vh, 65vw 101vh, 101vw 187vh, 70vw 146vh, 44vw 182vh, 25vw 154vh, 23vw 167vh, 100vw 163vh, 118vw 118vh, 82vw 184vh, 74vw 162vh, 40vw 173vh, 18vw 144vh, 35vw 172vh, 21vw 187vh, 81vw 103vh, 100vw 126vh, 44vw 108vh, 70vw 133vh, 30vw 119vh, 48vw 167vh, 61vw 127vh, 52vw 119vh, 90vw 153vh, 111vw 186vh, 31vw 101vh, 54vw 104vh, 101vw 141vh, 94vw 108vh, 92vw 117vh, 113vw 156vh, 69vw 136vh, 74vw 111vh, 14vw 109vh, 23vw 102vh, 85vw 172vh, 89vw 188vh, 71vw 122vh, 37vw 138vh, 93vw 106vh, 24vw 156vh, 90vw 185vh, 78vw 165vh, 116vw 134vh, 18vw 138vh, 42vw 130vh, 102vw 122vh, 26vw 194vh, 63vw 185vh, 16vw 149vh, 37vw 158vh, 41vw 120vh, 48vw; } }
+    background-position: 58vh, 98vw 70vh, 26vw 78vh, 92vw 45vh, 53vw 34vh, 21vw 63vh, 18vw 60vh, 5vw 43vh, 79vw 75vh, 70vw 65vh, 7vw 29vh, 92vw 63vh, 60vw 19vh, 34vw 67vh, 53vw 30vh, 63vw 61vh, 35vw 49vh, 5vw 44vh, 42vw 46vh, 8vw 100vh, 23vw 22vh, 54vw 82vh, 38vw 51vh, 53vw 96vh, 61vw 74vh, 72vw 72vh, 49vw 76vh, 75vw 42vh, 87vw 66vh, 48vw 4vh, 72vw 74vh, 39vw 10vh, 16vw 26vh, 82vw 83vh, 99vw 7vh, 23vw 21vh, 4vw 84vh, 92vw 10vh, 33vw 72vh, 75vw 59vh, 59vw 47vh, 17vw 73vh, 99vw 13vh, 20vw 52vh, 20vw 84vh, 51vw 33vh, 12vw 90vh, 92vw 47vh, 29vw 19vh, 10vw 50vh, 82vw 41vh, 16vw 38vh, 53vw 15vh, 30vw 91vh, 48vw 78vh, 80vw 9vh, 17vw 99vh, 93vw 64vh, 2vw 83vh, 74vw 40vh, 21vw 158vh, 98vw 170vh, 26vw 178vh, 92vw 145vh, 53vw 134vh, 21vw 163vh, 18vw 160vh, 5vw 143vh, 79vw 175vh, 70vw 165vh, 7vw 129vh, 92vw 163vh, 60vw 119vh, 34vw 167vh, 53vw 130vh, 63vw 161vh, 35vw 149vh, 5vw 144vh, 42vw 146vh, 8vw 200vh, 23vw 122vh, 54vw 182vh, 38vw 151vh, 53vw 196vh, 61vw 174vh, 72vw 172vh, 49vw 176vh, 75vw 142vh, 87vw 166vh, 48vw 104vh, 72vw 174vh, 39vw 110vh, 16vw 126vh, 82vw 183vh, 99vw 107vh, 23vw 121vh, 4vw 184vh, 92vw 110vh, 33vw 172vh, 75vw 159vh, 59vw 147vh, 17vw 173vh, 99vw 113vh, 20vw 152vh, 20vw 184vh, 51vw 133vh, 12vw 190vh, 92vw 147vh, 29vw 119vh, 10vw 150vh, 82vw 141vh, 16vw 138vh, 53vw 115vh, 30vw 191vh, 48vw 178vh, 80vw 109vh, 17vw 199vh, 93vw 164vh, 2vw 183vh, 74vw 140vh, 21vw; } }
   .snow-group > .snow-2 {
     height: 100vh;
     width: 100vw;
     position: fixed;
     background-repeat: no-repeat;
-    background-size: 10px 10px;
+    background-size: 9px 9px;
     background-color: transparent;
     background-attachment: fixed;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-duration: 18258ms;
+    animation-duration: 20s;
     animation-name: anim-2;
     background-image: radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent); }
 @keyframes anim-2 {
   0% {
-    background-position: -76vh, 44vw -98vh, 32vw -39vh, 20vw -16vh, 15vw -25vh, 59vw -59vh, -9vw -16vh, 85vw -46vh, 93vw -7vh, 52vw -91vh, 45vw -32vh, 60vw -93vh, 70vw -50vh, 95vw -3vh, 60vw -64vh, 4vw -83vh, 50vw -94vh, -2vw -77vh, 50vw -88vh, 34vw -65vh, -3vw -90vh, 30vw -74vh, 26vw -88vh, 62vw -2vh, 100vw -20vh, 94vw -54vh, 26vw -49vh, 53vw -67vh, 27vw -45vh, 75vw -52vh, 42vw -83vh, 59vw -49vh, 8vw -92vh, 19vw -72vh, 49vw -87vh, 2vw -14vh, 90vw -62vh, 84vw -19vh, 48vw -38vh, 29vw -99vh, 85vw -15vh, 37vw -82vh, 44vw -64vh, 2vw -73vh, 32vw -19vh, 12vw -35vh, 44vw -1vh, 96vw -14vh, 98vw -62vh, 18vw -38vh, 96vw 24vh, 54vw 2vh, 42vw 61vh, 30vw 84vh, 25vw 75vh, 69vw 41vh, 1vw 84vh, 95vw 54vh, 103vw 93vh, 62vw 9vh, 55vw 68vh, 70vw 7vh, 80vw 50vh, 105vw 97vh, 70vw 36vh, 14vw 17vh, 60vw 6vh, 8vw 23vh, 60vw 12vh, 44vw 35vh, 7vw 10vh, 40vw 26vh, 36vw 12vh, 72vw 98vh, 110vw 80vh, 104vw 46vh, 36vw 51vh, 63vw 33vh, 37vw 55vh, 85vw 48vh, 52vw 17vh, 69vw 51vh, 18vw 8vh, 29vw 28vh, 59vw 13vh, 12vw 86vh, 100vw 38vh, 94vw 81vh, 58vw 62vh, 39vw 1vh, 95vw 85vh, 47vw 18vh, 54vw 36vh, 12vw 27vh, 42vw 81vh, 22vw 65vh, 54vw 99vh, 106vw 86vh, 108vw 38vh, 28vw 62vh, 106vw; }
+    background-position: -68vh, 58vw -64vh, 77vw -24vh, 87vw -18vh, 87vw -69vh, 54vw -22vh, 60vw -42vh, 23vw -76vh, 42vw -99vh, 17vw -26vh, 87vw -68vh, 92vw -55vh, 35vw -9vh, 88vw -27vh, 20vw -83vh, 65vw -86vh, 37vw -74vh, 80vw -87vh, 30vw -16vh, 85vw -77vh, 3vw -25vh, 86vw -47vh, 23vw -41vh, 2vw -21vh, 28vw -72vh, 26vw -65vh, 77vw -27vh, 70vw -73vh, 31vw -60vh, 100vw -2vh, 66vw -24vh, 96vw -9vh, 42vw -32vh, 7vw -69vh, 95vw -49vh, 45vw 0vh, 39vw -32vh, 27vw -16vh, 78vw -27vh, 48vw -30vh, 30vw -95vh, 22vw -49vh, 27vw -5vh, 49vw -13vh, 43vw -76vh, 18vw -16vh, 47vw -11vh, 93vw -41vh, 57vw -65vh, 73vw -92vh, 83vw 32vh, 58vw 36vh, 77vw 76vh, 87vw 82vh, 87vw 31vh, 54vw 78vh, 60vw 58vh, 23vw 24vh, 42vw 1vh, 17vw 74vh, 87vw 32vh, 92vw 45vh, 35vw 91vh, 88vw 73vh, 20vw 17vh, 65vw 14vh, 37vw 26vh, 80vw 13vh, 30vw 84vh, 85vw 23vh, 3vw 75vh, 86vw 53vh, 23vw 59vh, 2vw 79vh, 28vw 28vh, 26vw 35vh, 77vw 73vh, 70vw 27vh, 31vw 40vh, 100vw 98vh, 66vw 76vh, 96vw 91vh, 42vw 68vh, 7vw 31vh, 95vw 51vh, 45vw 100vh, 39vw 68vh, 27vw 84vh, 78vw 73vh, 48vw 70vh, 30vw 5vh, 22vw 51vh, 27vw 95vh, 49vw 87vh, 43vw 24vh, 18vw 84vh, 47vw 89vh, 93vw 59vh, 57vw 35vh, 73vw 8vh, 83vw; }
   100% {
-    background-position: 24vh, 54vw 2vh, 42vw 61vh, 30vw 84vh, 25vw 75vh, 69vw 41vh, 1vw 84vh, 95vw 54vh, 103vw 93vh, 62vw 9vh, 55vw 68vh, 70vw 7vh, 80vw 50vh, 105vw 97vh, 70vw 36vh, 14vw 17vh, 60vw 6vh, 8vw 23vh, 60vw 12vh, 44vw 35vh, 7vw 10vh, 40vw 26vh, 36vw 12vh, 72vw 98vh, 110vw 80vh, 104vw 46vh, 36vw 51vh, 63vw 33vh, 37vw 55vh, 85vw 48vh, 52vw 17vh, 69vw 51vh, 18vw 8vh, 29vw 28vh, 59vw 13vh, 12vw 86vh, 100vw 38vh, 94vw 81vh, 58vw 62vh, 39vw 1vh, 95vw 85vh, 47vw 18vh, 54vw 36vh, 12vw 27vh, 42vw 81vh, 22vw 65vh, 54vw 99vh, 106vw 86vh, 108vw 38vh, 28vw 62vh, 106vw 124vh, 64vw 102vh, 52vw 161vh, 40vw 184vh, 35vw 175vh, 79vw 141vh, 11vw 184vh, 105vw 154vh, 113vw 193vh, 72vw 109vh, 65vw 168vh, 80vw 107vh, 90vw 150vh, 115vw 197vh, 80vw 136vh, 24vw 117vh, 70vw 106vh, 18vw 123vh, 70vw 112vh, 54vw 135vh, 17vw 110vh, 50vw 126vh, 46vw 112vh, 82vw 198vh, 120vw 180vh, 114vw 146vh, 46vw 151vh, 73vw 133vh, 47vw 155vh, 95vw 148vh, 62vw 117vh, 79vw 151vh, 28vw 108vh, 39vw 128vh, 69vw 113vh, 22vw 186vh, 110vw 138vh, 104vw 181vh, 68vw 162vh, 49vw 101vh, 105vw 185vh, 57vw 118vh, 64vw 136vh, 22vw 127vh, 52vw 181vh, 32vw 165vh, 64vw 199vh, 116vw 186vh, 118vw 138vh, 38vw 162vh, 116vw; } }
+    background-position: 32vh, 58vw 36vh, 77vw 76vh, 87vw 82vh, 87vw 31vh, 54vw 78vh, 60vw 58vh, 23vw 24vh, 42vw 1vh, 17vw 74vh, 87vw 32vh, 92vw 45vh, 35vw 91vh, 88vw 73vh, 20vw 17vh, 65vw 14vh, 37vw 26vh, 80vw 13vh, 30vw 84vh, 85vw 23vh, 3vw 75vh, 86vw 53vh, 23vw 59vh, 2vw 79vh, 28vw 28vh, 26vw 35vh, 77vw 73vh, 70vw 27vh, 31vw 40vh, 100vw 98vh, 66vw 76vh, 96vw 91vh, 42vw 68vh, 7vw 31vh, 95vw 51vh, 45vw 100vh, 39vw 68vh, 27vw 84vh, 78vw 73vh, 48vw 70vh, 30vw 5vh, 22vw 51vh, 27vw 95vh, 49vw 87vh, 43vw 24vh, 18vw 84vh, 47vw 89vh, 93vw 59vh, 57vw 35vh, 73vw 8vh, 83vw 132vh, 58vw 136vh, 77vw 176vh, 87vw 182vh, 87vw 131vh, 54vw 178vh, 60vw 158vh, 23vw 124vh, 42vw 101vh, 17vw 174vh, 87vw 132vh, 92vw 145vh, 35vw 191vh, 88vw 173vh, 20vw 117vh, 65vw 114vh, 37vw 126vh, 80vw 113vh, 30vw 184vh, 85vw 123vh, 3vw 175vh, 86vw 153vh, 23vw 159vh, 2vw 179vh, 28vw 128vh, 26vw 135vh, 77vw 173vh, 70vw 127vh, 31vw 140vh, 100vw 198vh, 66vw 176vh, 96vw 191vh, 42vw 168vh, 7vw 131vh, 95vw 151vh, 45vw 200vh, 39vw 168vh, 27vw 184vh, 78vw 173vh, 48vw 170vh, 30vw 105vh, 22vw 151vh, 27vw 195vh, 49vw 187vh, 43vw 124vh, 18vw 184vh, 47vw 189vh, 93vw 159vh, 57vw 135vh, 73vw 108vh, 83vw; } }
   .snow-group > .snow-3 {
     height: 100vh;
     width: 100vw;
     position: fixed;
     background-repeat: no-repeat;
-    background-size: 5px 5px;
+    background-size: 6px 6px;
     background-color: transparent;
     background-attachment: fixed;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    animation-duration: 14144ms;
+    animation-duration: 18.33333s;
     animation-name: anim-3;
     background-image: radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent), radial-gradient(farthest-side, white, transparent); }
 @keyframes anim-3 {
   0% {
-    background-position: -8vh, 99vw -51vh, 33vw -95vh, 85vw -94vh, -5vw -18vh, 80vw -59vh, 54vw -89vh, 80vw -58vh, 70vw -43vh, 97vw -26vh, 78vw -36vh, 60vw -55vh, 12vw -70vh, 10vw -6vh, 61vw -66vh, 35vw -25vh, 54vw -53vh, 82vw -15vh, 17vw -23vh, 19vw -7vh, 93vw -63vh, 90vw -25vh, 33vw -27vh, 66vw -16vh, 37vw -62vh, 69vw -51vh, 19vw -67vh, 26vw -33vh, 68vw -12vh, 51vw -74vh, 86vw -8vh, 32vw -22vh, 78vw -19vh, 56vw -11vh, 47vw -11vh, -9vw -91vh, -4vw -70vh, 37vw -69vh, 56vw -83vh, 21vw -8vh, 35vw -21vh, -9vw -44vh, 50vw -40vh, 8vw -66vh, 10vw -2vh, 68vw -39vh, 42vw -93vh, 45vw -9vh, 19vw -92vh, 72vw -98vh, 97vw -46vh, 16vw -38vh, 38vw -68vh, 24vw -40vh, 0vw -46vh, 30vw -85vh, 81vw -89vh, 43vw -31vh, 35vw -25vh, 37vw -33vh, 9vw 92vh, 109vw 49vh, 43vw 5vh, 95vw 6vh, 5vw 82vh, 90vw 41vh, 64vw 11vh, 90vw 42vh, 80vw 57vh, 107vw 74vh, 88vw 64vh, 70vw 45vh, 22vw 30vh, 20vw 94vh, 71vw 34vh, 45vw 75vh, 64vw 47vh, 92vw 85vh, 27vw 77vh, 29vw 93vh, 103vw 37vh, 100vw 75vh, 43vw 73vh, 76vw 84vh, 47vw 38vh, 79vw 49vh, 29vw 33vh, 36vw 67vh, 78vw 88vh, 61vw 26vh, 96vw 92vh, 42vw 78vh, 88vw 81vh, 66vw 89vh, 57vw 89vh, 1vw 9vh, 6vw 30vh, 47vw 31vh, 66vw 17vh, 31vw 92vh, 45vw 79vh, 1vw 56vh, 60vw 60vh, 18vw 34vh, 20vw 98vh, 78vw 61vh, 52vw 7vh, 55vw 91vh, 29vw 8vh, 82vw 2vh, 107vw 54vh, 26vw 62vh, 48vw 32vh, 34vw 60vh, 10vw 54vh, 40vw 15vh, 91vw 11vh, 53vw 69vh, 45vw 75vh, 47vw 67vh, 19vw; }
+    background-position: -57vh, 86vw -66vh, 67vw -3vh, 47vw -84vh, 26vw -96vh, 78vw -58vh, 66vw -34vh, 1vw -97vh, 94vw -4vh, 43vw -4vh, 19vw -89vh, 73vw -54vh, 84vw -15vh, 49vw -70vh, 21vw -34vh, 60vw -94vh, 40vw -98vh, 93vw -59vh, 4vw -62vh, 6vw -54vh, 69vw -65vh, 84vw -37vh, 6vw -10vh, 58vw -79vh, 44vw -24vh, 48vw -29vh, 90vw -58vh, 19vw -38vh, 67vw -30vh, 62vw 0vh, 40vw -17vh, 79vw -39vh, 38vw -35vh, 86vw -85vh, 97vw -52vh, 21vw -13vh, 67vw -84vh, 15vw -26vh, 89vw -31vh, 42vw -92vh, 96vw -79vh, 70vw -46vh, 50vw -99vh, 78vw -77vh, 57vw -33vh, 63vw -11vh, 45vw -68vh, 74vw -87vh, 81vw -75vh, 92vw -87vh, 63vw -34vh, 52vw -50vh, 47vw -78vh, 16vw -5vh, 60vw -16vh, 75vw -5vh, 4vw -44vh, 97vw -35vh, 69vw -94vh, 48vw -29vh, 40vw 43vh, 86vw 34vh, 67vw 97vh, 47vw 16vh, 26vw 4vh, 78vw 42vh, 66vw 66vh, 1vw 3vh, 94vw 96vh, 43vw 96vh, 19vw 11vh, 73vw 46vh, 84vw 85vh, 49vw 30vh, 21vw 66vh, 60vw 6vh, 40vw 2vh, 93vw 41vh, 4vw 38vh, 6vw 46vh, 69vw 35vh, 84vw 63vh, 6vw 90vh, 58vw 21vh, 44vw 76vh, 48vw 71vh, 90vw 42vh, 19vw 62vh, 67vw 70vh, 62vw 100vh, 40vw 83vh, 79vw 61vh, 38vw 65vh, 86vw 15vh, 97vw 48vh, 21vw 87vh, 67vw 16vh, 15vw 74vh, 89vw 69vh, 42vw 8vh, 96vw 21vh, 70vw 54vh, 50vw 1vh, 78vw 23vh, 57vw 67vh, 63vw 89vh, 45vw 32vh, 74vw 13vh, 81vw 25vh, 92vw 13vh, 63vw 66vh, 52vw 50vh, 47vw 22vh, 16vw 95vh, 60vw 84vh, 75vw 95vh, 4vw 56vh, 97vw 65vh, 69vw 6vh, 48vw 71vh, 40vw; }
   100% {
-    background-position: 92vh, 109vw 49vh, 43vw 5vh, 95vw 6vh, 5vw 82vh, 90vw 41vh, 64vw 11vh, 90vw 42vh, 80vw 57vh, 107vw 74vh, 88vw 64vh, 70vw 45vh, 22vw 30vh, 20vw 94vh, 71vw 34vh, 45vw 75vh, 64vw 47vh, 92vw 85vh, 27vw 77vh, 29vw 93vh, 103vw 37vh, 100vw 75vh, 43vw 73vh, 76vw 84vh, 47vw 38vh, 79vw 49vh, 29vw 33vh, 36vw 67vh, 78vw 88vh, 61vw 26vh, 96vw 92vh, 42vw 78vh, 88vw 81vh, 66vw 89vh, 57vw 89vh, 1vw 9vh, 6vw 30vh, 47vw 31vh, 66vw 17vh, 31vw 92vh, 45vw 79vh, 1vw 56vh, 60vw 60vh, 18vw 34vh, 20vw 98vh, 78vw 61vh, 52vw 7vh, 55vw 91vh, 29vw 8vh, 82vw 2vh, 107vw 54vh, 26vw 62vh, 48vw 32vh, 34vw 60vh, 10vw 54vh, 40vw 15vh, 91vw 11vh, 53vw 69vh, 45vw 75vh, 47vw 67vh, 19vw 192vh, 119vw 149vh, 53vw 105vh, 105vw 106vh, 15vw 182vh, 100vw 141vh, 74vw 111vh, 100vw 142vh, 90vw 157vh, 117vw 174vh, 98vw 164vh, 80vw 145vh, 32vw 130vh, 30vw 194vh, 81vw 134vh, 55vw 175vh, 74vw 147vh, 102vw 185vh, 37vw 177vh, 39vw 193vh, 113vw 137vh, 110vw 175vh, 53vw 173vh, 86vw 184vh, 57vw 138vh, 89vw 149vh, 39vw 133vh, 46vw 167vh, 88vw 188vh, 71vw 126vh, 106vw 192vh, 52vw 178vh, 98vw 181vh, 76vw 189vh, 67vw 189vh, 11vw 109vh, 16vw 130vh, 57vw 131vh, 76vw 117vh, 41vw 192vh, 55vw 179vh, 11vw 156vh, 70vw 160vh, 28vw 134vh, 30vw 198vh, 88vw 161vh, 62vw 107vh, 65vw 191vh, 39vw 108vh, 92vw 102vh, 117vw 154vh, 36vw 162vh, 58vw 132vh, 44vw 160vh, 20vw 154vh, 50vw 115vh, 101vw 111vh, 63vw 169vh, 55vw 175vh, 57vw 167vh, 29vw; } }
+    background-position: 43vh, 86vw 34vh, 67vw 97vh, 47vw 16vh, 26vw 4vh, 78vw 42vh, 66vw 66vh, 1vw 3vh, 94vw 96vh, 43vw 96vh, 19vw 11vh, 73vw 46vh, 84vw 85vh, 49vw 30vh, 21vw 66vh, 60vw 6vh, 40vw 2vh, 93vw 41vh, 4vw 38vh, 6vw 46vh, 69vw 35vh, 84vw 63vh, 6vw 90vh, 58vw 21vh, 44vw 76vh, 48vw 71vh, 90vw 42vh, 19vw 62vh, 67vw 70vh, 62vw 100vh, 40vw 83vh, 79vw 61vh, 38vw 65vh, 86vw 15vh, 97vw 48vh, 21vw 87vh, 67vw 16vh, 15vw 74vh, 89vw 69vh, 42vw 8vh, 96vw 21vh, 70vw 54vh, 50vw 1vh, 78vw 23vh, 57vw 67vh, 63vw 89vh, 45vw 32vh, 74vw 13vh, 81vw 25vh, 92vw 13vh, 63vw 66vh, 52vw 50vh, 47vw 22vh, 16vw 95vh, 60vw 84vh, 75vw 95vh, 4vw 56vh, 97vw 65vh, 69vw 6vh, 48vw 71vh, 40vw 143vh, 86vw 134vh, 67vw 197vh, 47vw 116vh, 26vw 104vh, 78vw 142vh, 66vw 166vh, 1vw 103vh, 94vw 196vh, 43vw 196vh, 19vw 111vh, 73vw 146vh, 84vw 185vh, 49vw 130vh, 21vw 166vh, 60vw 106vh, 40vw 102vh, 93vw 141vh, 4vw 138vh, 6vw 146vh, 69vw 135vh, 84vw 163vh, 6vw 190vh, 58vw 121vh, 44vw 176vh, 48vw 171vh, 90vw 142vh, 19vw 162vh, 67vw 170vh, 62vw 200vh, 40vw 183vh, 79vw 161vh, 38vw 165vh, 86vw 115vh, 97vw 148vh, 21vw 187vh, 67vw 116vh, 15vw 174vh, 89vw 169vh, 42vw 108vh, 96vw 121vh, 70vw 154vh, 50vw 101vh, 78vw 123vh, 57vw 167vh, 63vw 189vh, 45vw 132vh, 74vw 113vh, 81vw 125vh, 92vw 113vh, 63vw 166vh, 52vw 150vh, 47vw 122vh, 16vw 195vh, 60vw 184vh, 75vw 195vh, 4vw 156vh, 97vw 165vh, 69vw 106vh, 48vw 171vh, 40vw; } }
 .snow-stop {
   background-color: transparent; }
 
@@ -148,14 +173,14 @@ body {
   border-color: white;
   border-style: solid;
   border-radius: 3px;
-  height: 32px;
-  width: 100%; }
+  height: 0.5rem;
+  width: 100%;
+  min-height: 16px; }
   .process-wrap > .process-entity {
     margin: 3px;
     background-color: white;
     height: calc(100% - 6px);
     width: calc(100% - 6px);
-    transition: all 100ms;
     animation-name: fade-bg-color;
     animation-duration: 6s;
     animation-timing-function: linear;
@@ -164,8 +189,8 @@ body {
 .number-span {
   width: 3em;
   text-align: right;
-  font-size: 1.5em;
-  text-indent: 1em;
+  font-size: 0.4rem;
+  text-indent: 16px;
   display: block;
   position: relative;
   white-space: nowrap; }
