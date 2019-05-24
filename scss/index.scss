@@ -43,6 +43,7 @@ body {
         animation-delay: $anim-1-time;
         animation-timing-function: linear;
         animation-fill-mode: forwards;
+        overflow: hidden;
       }
 
       div[hr] > div {
