@@ -12,6 +12,7 @@ body {
 
 #app {
   @import "../pages/welcome/index";
+  @import "../pages/pingpong/index";
 }
 
 @import "../lib/snow/index";

@@ -2,22 +2,36 @@ const throttle = require('lodash/throttle')
 const Snow = require('../../lib/snow/index')
 const Process = require('../../lib/process/index')
 
-function index () {
+let snow, process
+
+function initSnow () {
   // init snow
-  let snow = new Snow('welcomePage')
+  snow = new Snow('welcomePage')
   window.snow = snow
   snow.open()
-  // init process
-  let process = new Process({
+}
+
+function initProcess () {
+  process = new Process({
     rootEl: document.getElementById('process'),
     showNumber: true,
     TWEENSet: false,
     callback: function () {
-      snow.close()
+      snow.close(function () {
+        require('../../route').go('pingpong')
+      })
       document.getElementById('hr').remove()
     }
   })
+  process.on('process', function (value) {
+    process.number += value.number
+    process.msg = value.msg
+  })
+}
 
+function index () {
+  initSnow()
+  initProcess()
   const sg = document.querySelector('#welcomePage').getElementsByClassName('snow-group')[0]
   const sgBaseTransform = 'perspective(3000px) translate3d(0px, 0px, 300px) '
   sg.style.transform = sgBaseTransform
@@ -25,13 +39,14 @@ function index () {
     sg.style.transform = sgBaseTransform + 'rotate3d(' + [(sg.clientHeight / 2 - e.clientY) / sg.clientHeight, (e.clientX - sg.clientWidth / 2) / sg.clientWidth, 0].join(',') + ',5deg) '
   }, 50))
 
-  function test () {
-    process.number += Math.random() * 10
-    if (process.number < 100) {
-      setTimeout(test, 1000)
-    }
-  }
-  setTimeout(test)
+  import('three').then(value => process.emit('process', {
+    msg: 'module three.js loaded',
+    number: 30
+  }))
+  import('ammo.js').then(value => process.emit('process', {
+    msg: 'module ammo.js loaded',
+    number: 70
+  }))
 }
 
 module.exports = index

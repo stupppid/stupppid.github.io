@@ -21,9 +21,9 @@
   /* size duration move-width number */
   $speed-index: 0.6;
   $snows: (
-                  ((3px 3px), 10s / $speed-index, 0, 60),
-                  ((9px 9px), 12s / $speed-index, 0, 50),
-                  ((6px 6px), 11s / $speed-index, 0, 60)
+                  ((0.05rem 0.05rem), 10s / $speed-index, 0, 60),
+                  ((0.12rem 0.12rem), 12s / $speed-index, 0, 50),
+                  ((0.08rem 0.08rem), 11s / $speed-index, 0, 60)
   );
   @for $i from 1 through 3 {
     >.snow-#{$i} {

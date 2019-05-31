@@ -19,7 +19,7 @@
   width: 100%;
   min-height: 16px;
 
-  >.process-entity {
+  &>.process-entity {
     margin: 3px;
     background-color: white;
     height: calc(100% - 6px);
@@ -30,7 +30,20 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
   }
+
+  &>.process-msg {
+    font-size: 0.3rem;
+    margin: 0.3rem;
+    letter-spacing: 0.04rem;
+    word-spacing: 0.24rem;
+
+    animation-name: fade-forever;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
 }
+
 .number-span {
   width: 3em;
   text-align: right;

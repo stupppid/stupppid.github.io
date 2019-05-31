@@ -1,0 +1,90 @@
+@keyframes magic-linear-right {
+  0% {
+    transform: translate(-50%); }
+  100% {
+    transform: translate(0); } }
+@keyframes fade-forever {
+  0% {
+    color: white; }
+  50% {
+    color: transparent; }
+  100% {
+    color: white; } }
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translate(-100vw); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+.welcome {
+  height: 100vh;
+  text-align: center;
+  color: white;
+  position: relative; }
+  .welcome .snow-group {
+    transition: background-color 2s,transform 300ms; }
+@keyframes move-from-top-top-panel {
+  0% {
+    transform: translate(0, -20vh); }
+  100% {
+    transform: translate(0, calc(40vh - 2rem)); } }
+@keyframes move-from-top-bottom-panel {
+  0% {
+    transform: translate(0, 100vh); }
+  100% {
+    transform: translate(0, calc(50vh + 2rem)); } }
+  .welcome > .top-panel {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    animation-name: move-from-top-top-panel;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    filter: drop-shadow(0px 0px 3px white); }
+    .welcome > .top-panel div[hr] {
+      height: 1px;
+      transform: translate(-100vw);
+      animation-name: fade-in-from-left;
+      animation-duration: 300ms;
+      animation-delay: 1s;
+      animation-timing-function: linear;
+      animation-fill-mode: forwards;
+      overflow: hidden; }
+    .welcome > .top-panel div[hr] > div {
+      width: 200%;
+      height: 100%;
+      transform: translate(-50%);
+      background: linear-gradient(to right, red, blue, red, blue, red);
+      animation-name: magic-linear-right;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-delay: 1300ms; }
+    .welcome > .top-panel > .title {
+      word-spacing: 0.5rem;
+      font-size: 0.5rem;
+      letter-spacing: 0.25rem;
+      display: inline-block;
+      animation-name: fade-forever;
+      animation-duration: 6s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite; }
+      .welcome > .top-panel > .title .end-letter {
+        letter-spacing: 0; }
+  .welcome > .bottom-panel {
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    animation-name: move-from-top-bottom-panel;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    filter: drop-shadow(0px 0px 3px white); }
+    .welcome > .bottom-panel > .process {
+      left: 0;
+      right: 0;
+      margin: auto;
+      width: 72%;
+      display: flex; }
+
+/*# sourceMappingURL=index.css.map */

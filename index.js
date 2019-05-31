@@ -1,6 +1,4 @@
-require('./pages/welcome/index.html')
-require('./pages/welcome/index.js')
-const route = require('./route')
+const route = require('./route/index')
 // welcome page
 !(function () {
   route.go('welcome')
