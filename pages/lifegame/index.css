@@ -1,0 +1,41 @@
+div[page=lifegame] {
+  box-sizing: border-box; }
+  div[page=lifegame] .world {
+    margin: auto; }
+  div[page=lifegame] .uel {
+    height: 15px;
+    line-height: 15px; }
+  div[page=lifegame] .uel:nth-of-type(1) > .el {
+    border-top: solid 1px lightgray; }
+  div[page=lifegame] .uel:first-of-type {
+    background-color: lightgray; }
+  div[page=lifegame] .uel:last-of-type {
+    background-color: lightgray; }
+  div[page=lifegame] .el {
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-right: solid 1px lightgray;
+    border-bottom: solid 1px lightgray;
+    box-sizing: border-box; }
+  div[page=lifegame] .el:nth-of-type(1) {
+    border-left: solid 1px lightgray;
+    background-color: lightgray; }
+  div[page=lifegame] .el:last-of-type {
+    background-color: lightgray; }
+  div[page=lifegame] .alive {
+    background-color: skyblue; }
+  div[page=lifegame] .options {
+    text-align: center; }
+  div[page=lifegame] form {
+    margin: auto;
+    text-align: left;
+    display: inline-block; }
+  div[page=lifegame] form > label {
+    display: inline-block;
+    width: 120px; }
+  div[page=lifegame] #useInitStatus {
+    color: #36e;
+    cursor: pointer; }
+
+/*# sourceMappingURL=index.css.map */

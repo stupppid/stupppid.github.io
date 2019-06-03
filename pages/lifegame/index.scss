@@ -1,0 +1,53 @@
+div[page=lifegame] {
+  box-sizing: border-box;
+  .world{
+    margin: auto;
+  }
+  .uel{
+    height: 15px;
+    line-height: 15px;
+  }
+  .uel:nth-of-type(1)>.el{
+    border-top:solid 1px lightgray;
+  }
+  .uel:first-of-type{
+    background-color: lightgray;
+  }
+  .uel:last-of-type{
+    background-color: lightgray;
+  }
+  .el{
+    width: 15px;
+    height: 15px;
+    display: inline-block;
+    border-right:solid 1px lightgray;
+    border-bottom:solid 1px lightgray;
+    box-sizing: border-box;
+  }
+  .el:nth-of-type(1){
+    border-left:solid 1px lightgray;
+    background-color: lightgray;
+  }
+  .el:last-of-type{
+    background-color: lightgray;
+  }
+  .alive{
+    background-color: skyblue;
+  }
+  .options{
+    text-align: center;
+  }
+  form{
+    margin: auto;
+    text-align: left;
+    display: inline-block;
+  }
+  form>label{
+    display: inline-block;
+    width: 120px;
+  }
+  #useInitStatus{
+    color: #36e;
+    cursor: pointer;
+  }
+}

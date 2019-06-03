@@ -17,12 +17,12 @@
   100% {
     opacity: 1;
     transform: translate(0); } }
-.welcome {
+div[page=welcome] {
   height: 100vh;
   text-align: center;
   color: white;
   position: relative; }
-  .welcome .snow-group {
+  div[page=welcome] .snow-group {
     transition: background-color 2s,transform 300ms; }
 @keyframes move-from-top-top-panel {
   0% {
@@ -34,7 +34,7 @@
     transform: translate(0, 100vh); }
   100% {
     transform: translate(0, calc(50vh + 2rem)); } }
-  .welcome > .top-panel {
+  div[page=welcome] > .top-panel {
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -42,7 +42,7 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     filter: drop-shadow(0px 0px 3px white); }
-    .welcome > .top-panel div[hr] {
+    div[page=welcome] > .top-panel div[hr] {
       height: 1px;
       transform: translate(-100vw);
       animation-name: fade-in-from-left;
@@ -51,7 +51,7 @@
       animation-timing-function: linear;
       animation-fill-mode: forwards;
       overflow: hidden; }
-    .welcome > .top-panel div[hr] > div {
+    div[page=welcome] > .top-panel div[hr] > div {
       width: 200%;
       height: 100%;
       transform: translate(-50%);
@@ -61,7 +61,7 @@
       animation-timing-function: linear;
       animation-iteration-count: infinite;
       animation-delay: 1300ms; }
-    .welcome > .top-panel > .title {
+    div[page=welcome] > .top-panel > .title {
       word-spacing: 0.5rem;
       font-size: 0.5rem;
       letter-spacing: 0.25rem;
@@ -70,9 +70,9 @@
       animation-duration: 6s;
       animation-timing-function: linear;
       animation-iteration-count: infinite; }
-      .welcome > .top-panel > .title .end-letter {
+      div[page=welcome] > .top-panel > .title .end-letter {
         letter-spacing: 0; }
-  .welcome > .bottom-panel {
+  div[page=welcome] > .bottom-panel {
     z-index: 1;
     position: absolute;
     width: 100%;
@@ -80,7 +80,7 @@
     animation-duration: 1s;
     animation-fill-mode: forwards;
     filter: drop-shadow(0px 0px 3px white); }
-    .welcome > .bottom-panel > .process {
+    div[page=welcome] > .bottom-panel > .process {
       left: 0;
       right: 0;
       margin: auto;

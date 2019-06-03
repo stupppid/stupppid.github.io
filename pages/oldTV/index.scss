@@ -1,0 +1,12 @@
+div[page=oldTV] {
+  text-align: center;
+  #bell {
+    height: 100vh;
+    background: black;
+
+    canvas {
+      border: none !important;
+      height: 100%;
+    }
+  }
+}

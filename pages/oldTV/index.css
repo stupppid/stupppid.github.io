@@ -1,0 +1,10 @@
+div[page=oldTV] {
+  text-align: center; }
+  div[page=oldTV] #bell {
+    height: 100vh;
+    background: black; }
+    div[page=oldTV] #bell canvas {
+      border: none !important;
+      height: 100%; }
+
+/*# sourceMappingURL=index.css.map */

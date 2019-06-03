@@ -8,12 +8,25 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  font-size: 0.15rem;
 }
 
 #app {
   @import "../pages/welcome/index";
-  @import "../pages/pingpong/index";
+  @import "../pages/lifegame/index";
+  @import "../pages/oldTV/index";
 }
 
 @import "../lib/snow/index";
 @import "../lib/process/index";
+
+.top-tip-group {
+  background: transparent;
+  text-align: center;
+  font-size: 0.15rem;
+  color: white;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+}

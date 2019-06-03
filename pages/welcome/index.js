@@ -5,7 +5,6 @@ const Process = require('../../lib/process/index')
 let snow, process
 
 function initSnow () {
-  // init snow
   snow = new Snow('welcomePage')
   window.snow = snow
   snow.open()
@@ -18,7 +17,7 @@ function initProcess () {
     TWEENSet: false,
     callback: function () {
       snow.close(function () {
-        require('../../route').go('pingpong')
+        require('../../route').go('oldTV')
       })
       document.getElementById('hr').remove()
     }
@@ -38,15 +37,15 @@ function index () {
   document.getElementById('welcomePage').addEventListener('mousemove', throttle(function (e) {
     sg.style.transform = sgBaseTransform + 'rotate3d(' + [(sg.clientHeight / 2 - e.clientY) / sg.clientHeight, (e.clientX - sg.clientWidth / 2) / sg.clientWidth, 0].join(',') + ',5deg) '
   }, 50))
-
-  import('three').then(value => process.emit('process', {
-    msg: 'module three.js loaded',
-    number: 30
-  }))
-  import('ammo.js').then(value => process.emit('process', {
-    msg: 'module ammo.js loaded',
-    number: 70
-  }))
+  //
+  // import('three').then(value => process.emit('process', {
+  //   msg: 'module three.js loaded',
+  //   number: 30
+  // }))
+  // import('ammo.js').then(value => process.emit('process', {
+  //   msg: 'module ammo.js loaded',
+  //   number: 70
+  // }))
 }
 
 module.exports = index
