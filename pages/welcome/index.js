@@ -4,6 +4,37 @@ const Process = require('../../lib/process/index')
 
 let snow, process
 
+function createDisplayList (maps) {
+  let container = document.createElement('div')
+  container.classList.add('display-list')
+  // container.style.filter = 'url(' + require('./assets/abc.svg') + '#f1)'
+  for (let key in maps) {
+    if (maps[key].display) {
+      createDisplayItem.call(container, { name: key, picture: maps[key].picture })
+    }
+  }
+  document.getElementById('bottomPanel').insertBefore(container, document.getElementById('process'))
+}
+
+function createDisplayItem ({ name, picture }) {
+  let item = document.createElement('a')
+  item.classList.add('display-item')
+  item.href = '#' + name
+  let title = document.createElement('div')
+  title.classList.add('title')
+  title.innerText = name
+  item.appendChild(title)
+  if (picture) {
+    item.style.background = 'url(' + picture + ')'
+  } else {
+    let noImg = document.createElement('h1')
+    noImg.classList.add('no-image')
+    noImg.innerText = 'NO IMAGE'
+    item.appendChild(noImg)
+  }
+  this.appendChild(item)
+}
+
 function initSnow () {
   snow = new Snow('welcomePage')
   window.snow = snow
@@ -16,12 +47,12 @@ function initProcess () {
     showNumber: true,
     TWEENSet: false,
     callback: function () {
-      snow.close(function () {
-        require('../../route').go('oldTV')
-      })
-      document.getElementById('hr').remove()
+      // snow.close(function () {
+      //   require('../../route/index').router.go('oldTV')
+      // })
     }
   })
+  process.hide()
   process.on('process', function (value) {
     process.number += value.number
     process.msg = value.msg
@@ -29,6 +60,7 @@ function initProcess () {
 }
 
 function index () {
+  createDisplayList(require('../../route/index').raw)
   initSnow()
   initProcess()
   const sg = document.querySelector('#welcomePage').getElementsByClassName('snow-group')[0]

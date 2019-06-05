@@ -1,4 +1,4 @@
-let THREE; let Ammo
+let THREE; let Ammo;
 let scene; let camera; let renderer
 let dynamicsWorld
 let rigidBodies = []
@@ -243,22 +243,32 @@ function animate () {
 }
 
 function index () {
+  let flagArr = [false, false]
   import('ammo.js').then(value => {
-    window.Ammo =
-    Ammo = value
+    window.Ammo = Ammo = value
+    flagArr[0] = true
     transform = new Ammo.btTransform() // 暂存物体位置数据
   })
   import('three').then(value => {
     window.THREE = THREE = value
+    flagArr[1] = true
     require('three/examples/js/controls/OrbitControls')
     require('three/examples/js/loaders/GLTFLoader')
     THREE.Object3D.prototype.addRigidBody = addRigidBody;
     clock = new THREE.Clock()
-    initPhysics()
-    initWorld()
-    createObjects()
-    animate()
   })
+  let delay = 100
+  function init() {
+    if(flagArr.every(value => value)) {
+      initPhysics()
+      initWorld()
+      createObjects()
+      animate()
+    } else {
+      setTimeout(init, delay)
+    }
+  }
+  setTimeout(init, delay)
 }
 
 module.exports = index

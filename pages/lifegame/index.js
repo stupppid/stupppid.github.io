@@ -1,3 +1,4 @@
+var nextTick = null
 function initPersons (a, b, p, auto, t) {
   var stop = true
   var theWorld = {
@@ -16,7 +17,7 @@ function initPersons (a, b, p, auto, t) {
   function continueGo () {
     stop = false
     document.getElementById('start').innerText = '暂停'
-    setTimeout(setWorld, t)
+    nextTick = setTimeout(setWorld, t)
   }
   function initTable () {
     var wd = document.getElementById('wd')
@@ -211,17 +212,25 @@ function initPersons (a, b, p, auto, t) {
         }
       }
     }
-    if (!stop) { setTimeout(setWorld, t) }
+    if (!stop) { nextTick = setTimeout(setWorld, t) }
   }
   initTable()
   addEvent()
   if (auto) {
     continueGo()
     autoSelectAlive() // true是全部都死掉
-    setTimeout(setWorld, t)
+    nextTick = setTimeout(setWorld, t)
   } else {
     autoSelectAlive(true)
   }
 }
 
-module.exports = () => initPersons(20, 20, 0.3, true, 100)
+function index () {
+  initPersons(20, 20, 0.3, true, 100)
+}
+
+index.prototype.beforeLeave = function () {
+  clearTimeout(nextTick)
+}
+
+module.exports = index

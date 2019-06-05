@@ -11,10 +11,26 @@ body {
   font-size: 0.15rem;
 }
 
+a {
+  color: gray;
+  text-decoration: none;
+}
+
+a:hover {
+
+}
+
 #app {
   @import "../pages/welcome/index";
   @import "../pages/lifegame/index";
   @import "../pages/oldTV/index";
+
+  #githubAddress {
+    position: absolute;
+    margin: 10px;
+    color: white;
+    z-index: 100;
+  }
 }
 
 @import "../lib/snow/index";
