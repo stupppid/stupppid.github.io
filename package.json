@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "test",
-    "build": "del /Q/S dist\\ && parcel build index.html --public-url ./ && echo y|copy favicon.ico dist\\\\favicon.ico && xcopy static\\* dist\\static\\"
+    "build": "del /Q/S dist\\ && parcel build index.html --public-url ./ && echo y|copy favicon.ico dist\\\\favicon.ico && xcopy /s static\\* dist\\static\\"
   },
   "repository": {
     "type": "git",
