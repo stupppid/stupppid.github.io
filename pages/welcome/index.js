@@ -17,14 +17,20 @@ function createDisplayList (maps) {
 }
 
 function createDisplayItem ({ name, picture }) {
+  let container = document.createElement('div')
   let item = document.createElement('a')
-  item.classList.add('display-item')
+  container.classList.add('display-item')
+  container.appendChild(item)
   item.href = '#' + name
   let title = document.createElement('div')
   title.classList.add('title')
   title.innerText = name
   item.appendChild(title)
   if (picture) {
+    let loading = document.createElement('div')
+    loading.classList.add('loading')
+    loading.appendChild(document.createElement('div'))
+    container.appendChild(loading)
     item.style.background = 'url(' + picture + ')'
   } else {
     let noImg = document.createElement('h1')
@@ -32,7 +38,7 @@ function createDisplayItem ({ name, picture }) {
     noImg.innerText = 'NO IMAGE'
     item.appendChild(noImg)
   }
-  this.appendChild(item)
+  this.appendChild(container)
 }
 
 function initSnow () {
