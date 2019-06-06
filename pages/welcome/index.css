@@ -106,8 +106,6 @@ div[page=welcome] {
       padding: 30px 0;
       min-height: 180px;
       height: 40vh; }
-      div[page=welcome] > .bottom-panel > .display-list:hover {
-        background: white; }
       div[page=welcome] > .bottom-panel > .display-list .display-item {
         position: relative;
         background: transparent;
