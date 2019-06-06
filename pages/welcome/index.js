@@ -13,7 +13,7 @@ function createDisplayList (maps) {
       createDisplayItem.call(container, { name: key, info: maps[key] })
     }
   }
-  document.getElementById('bottomPanel').insertBefore(container, document.getElementById('process'))
+  document.getElementById('displayContainer').appendChild(container)
 }
 
 function createDisplayItem ({ name, info }) {
@@ -31,7 +31,13 @@ function createDisplayItem ({ name, info }) {
     loading.classList.add('loading')
     loading.appendChild(document.createElement('div'))
     container.appendChild(loading)
-    item.style.background = 'url(' + info.picture + ')'
+    let img = document.createElement('img')
+    img.src = info.picture
+    img.onload = function (e) {
+      container.appendChild(img)
+      loading.remove()
+      process.number += 25
+    }
   } else {
     let noImg = document.createElement('h1')
     noImg.classList.add('no-image')
@@ -41,10 +47,51 @@ function createDisplayItem ({ name, info }) {
   this.appendChild(container)
 }
 
+let wheelEvent, touchMoveEvent, resize
+function initEvent () {
+  if (!resize) {
+    resize = function (e) {
+      initEvent()
+    }
+    window.addEventListener('resize', resize)
+  }
+  const dc = document.getElementById('displayContainer')
+  const child = dc.children[0]
+  child.style.top = '0px'
+  child.style.transition = 'top 300ms'
+  let minTop = -child.clientHeight + dc.clientHeight
+  wheelEvent && dc.removeEventListener('wheel', wheelEvent)
+  touchMoveEvent && dc.removeEventListener('wheel', touchMoveEvent)
+  wheelEvent = null
+  touchMoveEvent = null
+  if (minTop < 0) {
+    wheelEvent = throttle(function (e) {
+      let mv = parseInt(child.style.top) - e.deltaY
+      if (mv < minTop) {
+        child.style.top = minTop + 'px'
+      } else if (mv > 0) {
+        child.style.top = 0 + 'px'
+      } else {
+        child.style.top = mv + 'px'
+      }
+    }, 50)
+    dc.addEventListener('wheel', wheelEvent)
+  }
+  dc.addEventListener('touchmove', function (e) {
+
+  })
+}
+
 function initSnow () {
   snow = new Snow('welcomePage')
   window.snow = snow
   snow.open()
+  const sg = document.querySelector('#welcomePage').getElementsByClassName('snow-group')[0]
+  const sgBaseTransform = 'perspective(3000px) translate3d(0px, 0px, 300px) '
+  sg.style.transform = sgBaseTransform
+  document.getElementById('welcomePage').addEventListener('mousemove', throttle(function (e) {
+    sg.style.transform = sgBaseTransform + 'rotate3d(' + [(sg.clientHeight / 2 - e.clientY) / sg.clientHeight, (e.clientX - sg.clientWidth / 2) / sg.clientWidth, 0].join(',') + ',5deg) '
+  }, 50))
 }
 
 function initProcess () {
@@ -53,28 +100,21 @@ function initProcess () {
     showNumber: true,
     TWEENSet: false,
     callback: function () {
-      // snow.close(function () {
-      //   require('../../route/index').router.go('oldTV')
-      // })
+      process.hide()
     }
   })
-  process.hide()
   process.on('process', function (value) {
     process.number += value.number
     process.msg = value.msg
   })
+  console.log(process)
 }
 
 function index () {
   createDisplayList(require('../../route/index').raw)
   initSnow()
   initProcess()
-  const sg = document.querySelector('#welcomePage').getElementsByClassName('snow-group')[0]
-  const sgBaseTransform = 'perspective(3000px) translate3d(0px, 0px, 300px) '
-  sg.style.transform = sgBaseTransform
-  document.getElementById('welcomePage').addEventListener('mousemove', throttle(function (e) {
-    sg.style.transform = sgBaseTransform + 'rotate3d(' + [(sg.clientHeight / 2 - e.clientY) / sg.clientHeight, (e.clientX - sg.clientWidth / 2) / sg.clientWidth, 0].join(',') + ',5deg) '
-  }, 50))
+  initEvent()
   //
   // import('three').then(value => process.emit('process', {
   //   msg: 'module three.js loaded',
