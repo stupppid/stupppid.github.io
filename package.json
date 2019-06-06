@@ -33,7 +33,7 @@
     "eslint-plugin-standard": "^4.0.0"
   },
   "dependencies": {
-    "3d-word-rain": "^1.0.8",
+    "3d-word-rain": "^1.0.9",
     "@tweenjs/tween.js": "^17.3.0",
     "ammo.js": "0.0.10",
     "events": "^3.0.0",

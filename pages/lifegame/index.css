@@ -37,5 +37,9 @@ div[page=lifegame] {
   div[page=lifegame] #useInitStatus {
     color: #36e;
     cursor: pointer; }
+  div[page=lifegame] .tip-group ol {
+    text-align: left;
+    width: 300px;
+    margin: auto; }
 
 /*# sourceMappingURL=index.css.map */

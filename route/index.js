@@ -1,5 +1,14 @@
 // 使用import.then来懒加载其他页面, 但是必须指定文件名才行，parcel不支持动态变量引入
 // todo 可以用node脚本来让这一块写的方便点
+
+// 配置项
+// page html
+// script 脚本
+// github github的链接
+// isHomepage 是否是主页
+// picture 展示用的图片地址
+// notFinished 项目是否完成
+
 const map = {
   'welcome': {
     page: require('/pages/welcome/index.html'),
@@ -11,13 +20,16 @@ const map = {
     page: import('/pages/pingpong/index.html'),
     script: import('/pages/pingpong/index.js'),
     display: true,
+    picture: require('/pages/pingpong/index.png'),
+    notFinished: true
   },
   'lifegame': {
     page: import('/pages/lifegame/index.html'),
     script: import('/pages/lifegame/index.js'),
     github: 'https://github.com/stupppid/lifegame',
     githubAddressColor: 'black',
-    display: true
+    display: true,
+    picture: require('/pages/lifegame/index.gif'),
   },
   '3d-word-rain': {
     page: import('/pages/3d-word-rain/index.html'),

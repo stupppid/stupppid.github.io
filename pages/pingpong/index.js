@@ -236,27 +236,18 @@ function initWorld () {
   })
 }
 
+let stopFlag = false
 function animate () {
-  updatePhysics(clock.getDelta() * 1000)
-  renderer.render(scene, camera)
-  requestAnimationFrame(animate)
+  if(!stopFlag) {
+    updatePhysics(clock.getDelta() * 1000)
+    renderer.render(scene, camera)
+    requestAnimationFrame(animate)
+  }
 }
 
+let flagArr = [false, false]
+
 function index () {
-  let flagArr = [false, false]
-  import('ammo.js').then(value => {
-    window.Ammo = Ammo = value
-    flagArr[0] = true
-    transform = new Ammo.btTransform() // 暂存物体位置数据
-  })
-  import('three').then(value => {
-    window.THREE = THREE = value
-    flagArr[1] = true
-    require('three/examples/js/controls/OrbitControls')
-    require('three/examples/js/loaders/GLTFLoader')
-    THREE.Object3D.prototype.addRigidBody = addRigidBody;
-    clock = new THREE.Clock()
-  })
   let delay = 100
   function init() {
     if(flagArr.every(value => value)) {
@@ -268,7 +259,39 @@ function index () {
       setTimeout(init, delay)
     }
   }
-  setTimeout(init, delay)
+  if(!scene) {
+    setTimeout(init, delay)
+  } else {
+    document.getElementById('container').appendChild(renderer.domElement)
+  }
+}
+
+let loaded = false
+index.beforeEnter = function() {
+  if(!loaded) {
+    import('ammo.js').then(value => {
+      Ammo = value
+      flagArr[0] = true
+      transform = new Ammo.btTransform() // 暂存物体位置数据
+    })
+    import('three').then(value => {
+      window.THREE = THREE = value
+      flagArr[1] = true
+      require('three/examples/js/controls/OrbitControls')
+      require('three/examples/js/loaders/GLTFLoader')
+      THREE.Object3D.prototype.addRigidBody = addRigidBody;
+      clock = new THREE.Clock()
+    })
+  }
+  loaded = true
+  if(stopFlag) {
+    stopFlag = false
+    animate()
+  }
+}
+
+index.beforeLeave = function() {
+  stopFlag = true
 }
 
 module.exports = index

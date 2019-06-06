@@ -10,13 +10,13 @@ function createDisplayList (maps) {
   // container.style.filter = 'url(' + require('./assets/abc.svg') + '#f1)'
   for (let key in maps) {
     if (maps[key].display) {
-      createDisplayItem.call(container, { name: key, picture: maps[key].picture })
+      createDisplayItem.call(container, { name: key, info: maps[key] })
     }
   }
   document.getElementById('bottomPanel').insertBefore(container, document.getElementById('process'))
 }
 
-function createDisplayItem ({ name, picture }) {
+function createDisplayItem ({ name, info }) {
   let container = document.createElement('div')
   let item = document.createElement('a')
   container.classList.add('display-item')
@@ -26,12 +26,12 @@ function createDisplayItem ({ name, picture }) {
   title.classList.add('title')
   title.innerText = name
   item.appendChild(title)
-  if (picture) {
+  if (info.picture) {
     let loading = document.createElement('div')
     loading.classList.add('loading')
     loading.appendChild(document.createElement('div'))
     container.appendChild(loading)
-    item.style.background = 'url(' + picture + ')'
+    item.style.background = 'url(' + info.picture + ')'
   } else {
     let noImg = document.createElement('h1')
     noImg.classList.add('no-image')

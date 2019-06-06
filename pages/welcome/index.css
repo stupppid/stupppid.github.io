@@ -102,9 +102,12 @@ div[page=welcome] {
       margin: auto;
       width: 80%;
       grid-template-columns: repeat(auto-fill, 320px);
-      grid-template-rows: repeat(auto-fill, auto);
       grid-gap: 60px 0.5rem;
-      padding: 30px 0; }
+      padding: 30px 0;
+      min-height: 180px;
+      height: 40vh; }
+      div[page=welcome] > .bottom-panel > .display-list:hover {
+        background: white; }
       div[page=welcome] > .bottom-panel > .display-list .display-item {
         position: relative;
         background: transparent;
@@ -146,7 +149,8 @@ div[page=welcome] {
             color: black;
             font-size: 50px;
             letter-spacing: 25px;
-            margin-left: 12px; }
+            margin-left: 12px;
+            margin-top: 0; }
           div[page=welcome] > .bottom-panel > .display-list .display-item > a .title {
             position: absolute;
             bottom: 0;
@@ -154,7 +158,8 @@ div[page=welcome] {
             right: 0;
             color: white;
             font-size: 20px;
-            letter-spacing: 3px; }
+            letter-spacing: 3px;
+            background: linear-gradient(transparent, black); }
       div[page=welcome] > .bottom-panel > .display-list .display-item:hover {
         filter: grayscale(0) drop-shadow(0px 0px 300px white); }
 

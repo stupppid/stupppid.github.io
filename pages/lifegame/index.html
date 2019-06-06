@@ -6,7 +6,7 @@
             <label>高:</label><input id="b" type="number" min='0' max="100" value="20" placeholder="高"/><br/>
             <label>初始生存率:</label><input id="p" type="number" min='0' max="1" value="0.3" step="0.1" placeholder="初始生存率,0-1之间"/><br/>
             <label>运行间隔时间(ms):</label><input id="time" type="number" min='0' value="100" placeholder="间隔时间(ms)"/><br/>
-            <label>初始状态:</label><input id="initStatus" type="text" value="[[0,0,1],[1,0,1],[0,1,1]]" placeholder="间隔时间(ms)"/><a id="useInitStatus">应用</a><br/>
+            <label>初始状态:</label><input id="initStatus" type="text" value="[[0,0,1],[1,0,1],[0,1,1]]" placeholder="初始状态"/><a id="useInitStatus">应用</a><br/>
         </form>
         <br/>
         <button id="start">开始</button>
@@ -14,5 +14,18 @@
         <button id="slider">滑翔机</button>
         <button id="shadow">幻影</button>
         <button id="clear">清空</button>
+        <div class="tip-group">
+            <h4>
+                提示:
+            </h4>
+            <ol>
+                <li>
+                    可以按住鼠标左键滑过棋盘或者点击棋盘来 激活/反激活 格子
+                </li>
+                <li>
+                    改变设置之后需要点击开始来完成设置
+                </li>
+            </ol>
+        </div>
     </div>
 </div>

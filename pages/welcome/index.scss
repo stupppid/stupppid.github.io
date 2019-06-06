@@ -85,9 +85,14 @@ div[page=welcome] {
       margin: auto;
       width: 80%;
       grid-template-columns: repeat(auto-fill, 320px);
-      grid-template-rows: repeat(auto-fill, auto);
       grid-gap: 60px 0.5rem;
       padding: 30px 0;
+      min-height: 180px;
+      height: 40vh;
+
+      &:hover {
+        background: white;
+      }
 
       .display-item {
         position: relative;
@@ -136,6 +141,7 @@ div[page=welcome] {
             font-size: 50px;
             letter-spacing: 25px;
             margin-left: 12px;
+            margin-top: 0;
           }
 
           .title {
@@ -146,6 +152,7 @@ div[page=welcome] {
             color: white;
             font-size: 20px;
             letter-spacing: 3px;
+            background: linear-gradient(transparent, black);
           }
         }
       }
