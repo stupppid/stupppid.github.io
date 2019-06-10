@@ -1,6 +1,7 @@
 const throttle = require('lodash/throttle')
 const Snow = require('../../lib/snow/index')
 const Process = require('../../lib/process/index')
+const scrollBar = require('../../lib/scrollBar/index')
 
 let snow, process
 
@@ -47,41 +48,6 @@ function createDisplayItem ({ name, info }) {
   this.appendChild(container)
 }
 
-let wheelEvent, touchMoveEvent, resize
-function initEvent () {
-  if (!resize) {
-    resize = function (e) {
-      initEvent()
-    }
-    window.addEventListener('resize', resize)
-  }
-  const dc = document.getElementById('displayContainer')
-  const child = dc.children[0]
-  child.style.top = '0px'
-  child.style.transition = 'top 300ms'
-  let minTop = -child.clientHeight + dc.clientHeight
-  wheelEvent && dc.removeEventListener('wheel', wheelEvent)
-  touchMoveEvent && dc.removeEventListener('wheel', touchMoveEvent)
-  wheelEvent = null
-  touchMoveEvent = null
-  if (minTop < 0) {
-    wheelEvent = throttle(function (e) {
-      let mv = parseInt(child.style.top) - e.deltaY
-      if (mv < minTop) {
-        child.style.top = minTop + 'px'
-      } else if (mv > 0) {
-        child.style.top = 0 + 'px'
-      } else {
-        child.style.top = mv + 'px'
-      }
-    }, 50)
-    dc.addEventListener('wheel', wheelEvent)
-  }
-  dc.addEventListener('touchmove', function (e) {
-
-  })
-}
-
 function initSnow () {
   snow = new Snow('welcomePage')
   window.snow = snow
@@ -107,23 +73,14 @@ function initProcess () {
     process.number += value.number
     process.msg = value.msg
   })
-  console.log(process)
 }
 
 function index () {
   createDisplayList(require('../../route/index').raw)
   initSnow()
   initProcess()
-  initEvent()
-  //
-  // import('three').then(value => process.emit('process', {
-  //   msg: 'module three.js loaded',
-  //   number: 30
-  // }))
-  // import('ammo.js').then(value => process.emit('process', {
-  //   msg: 'module ammo.js loaded',
-  //   number: 70
-  // }))
+  let dc = document.getElementById('displayContainer')
+  scrollBar(dc, dc.querySelector('.display-list'))()
 }
 
 module.exports = index

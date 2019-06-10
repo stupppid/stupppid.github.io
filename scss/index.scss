@@ -2,6 +2,7 @@
 
 html {
   font-size: 5vw;
+  font-family: 'iconfont';
 }
 
 body {
@@ -16,8 +17,23 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+.icon-group {
+  position: fixed;
+  z-index: 100;
+  a {
+    margin-right: 10px;
+    height: 32px;
+  }
+}
 
+@font-face {
+  font-family: 'iconfont';  /* project id 1234362 */
+  src: url('//at.alicdn.com/t/font_1234362_6jjpcylmlyj.eot');
+  src: url('//at.alicdn.com/t/font_1234362_6jjpcylmlyj.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_1234362_6jjpcylmlyj.woff2') format('woff2'),
+  url('//at.alicdn.com/t/font_1234362_6jjpcylmlyj.woff') format('woff'),
+  url('//at.alicdn.com/t/font_1234362_6jjpcylmlyj.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_1234362_6jjpcylmlyj.svg#iconfont') format('svg');
 }
 
 #app {
@@ -26,15 +42,13 @@ a:hover {
   @import "../pages/oldTV/index";
 
   #githubAddress {
-    position: absolute;
-    margin: 10px;
     color: white;
-    z-index: 100;
   }
 }
 
 @import "../lib/snow/index";
 @import "../lib/process/index";
+@import "../lib/scrollBar/index";
 
 .top-tip-group {
   background: transparent;

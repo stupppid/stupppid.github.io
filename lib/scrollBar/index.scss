@@ -1,0 +1,11 @@
+.scroll-bar {
+  content: '';
+  top: 0;
+  position: absolute;
+  right: 0;
+  width: 4px;
+  background: white;
+  border: black 1px solid;
+  border-radius: 2px;
+  transition: all 300ms;
+}
