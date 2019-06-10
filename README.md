@@ -22,6 +22,7 @@
     ├─lib       # 没丢到npm上，在项目中依然需要用到的自写组件  
     │  ├─process  # 进度条组件  
     │  ├─router   # 页面组件化 / 路由控制  
+    │  ├─scrollBar# 滚动条组件
     │  └─snow     # 雪花背景组件  
     ├─pages     # 页面  
     │  ├─3d-word-rain
