@@ -13,7 +13,7 @@ function beforeEnter ({ path, pathInfo, event }) {
   if (pathInfo.github) {
     setGitAddrStyle(pathInfo)
   } else {
-    setGitAddrStyle({ github: ':javascript:void(0);' })
+    setGitAddrStyle({ github: 'javascript:void(0)' })
   }
 }
 

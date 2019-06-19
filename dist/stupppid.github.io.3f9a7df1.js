@@ -62,7 +62,7 @@ var e={welcome:{page:require("/pages/welcome/index.html"),script:require("/pages
 },{"/pages/welcome/index.html":"Z0eu","/pages/welcome/index.js":"nxaC","_bundle_loader":"Ak0P","/pages/pingpong/index.html":[["pingpong.61470181.html","6QVh"],"6QVh"],"/pages/pingpong/index.js":[["pingpong.7dfd31a7.js","D3VI"],"pingpong.7dfd31a7.js.map",["pingpong.5c50a9c4.gltf","kit1"],["racket.7718a469.gltf","CbOD"],"D3VI"],"/pages/pingpong/index.png":"5Nuw","/pages/lifegame/index.html":[["lifegame.39e5b939.html","X687"],"X687"],"/pages/lifegame/index.js":[["lifegame.db6e5cf0.js","FD8j"],"lifegame.db6e5cf0.js.map","FD8j"],"/pages/lifegame/index.gif":"X6yJ","/pages/3d-word-rain/index.html":[["3d-word-rain.994e0bd8.html","QzTe"],"QzTe"],"/pages/3d-word-rain/index.js":[["3d-word-rain.8fc1565d.js","7bcd"],"3d-word-rain.8fc1565d.js.map","7bcd"],"/pages/3d-word-rain/index.gif":"hGGp","/pages/oldTV/index.html":[["oldTV.362c7b95.html","nIqw"],"nIqw"],"/pages/oldTV/index.js":[["oldTV.c31b9cdc.js","H5TN"],"oldTV.c31b9cdc.js.map","H5TN"],"/pages/oldTV/index.gif":"ZBJg","../lib/router":"KtO6"}],"yMXu":[function(require,module,exports) {
 module.exports={githubAddressDefaultColor:"white",pagePrototype:{beforeLeave:function(){}}};
 },{}],"Focm":[function(require,module,exports) {
-var r=require("./route/index"),e=r.router,o=r.raw,t=require("./config");function i(r){u.href=r.github,u.style.color=r.githubAddressColor||t.githubAddressDefaultColor}function n(r){r.path;var e=r.pathInfo;r.event;e.github?i(e):i({github:":javascript:void(0);"})}var u=document.getElementById("githubAddress");e.on("beforeEnter",n),function(){var r=!1;for(var t in o)if(t===window.location.hash.substr(1)){n({pathInfo:o[t]}),e.show(t),r=!0;break}r||e.go("welcome")}();
+var r=require("./route/index"),e=r.router,o=r.raw,t=require("./config");function i(r){u.href=r.github,u.style.color=r.githubAddressColor||t.githubAddressDefaultColor}function n(r){r.path;var e=r.pathInfo;r.event;e.github?i(e):i({github:"javascript:void(0)"})}var u=document.getElementById("githubAddress");e.on("beforeEnter",n),function(){var r=!1;for(var t in o)if(t===window.location.hash.substr(1)){n({pathInfo:o[t]}),e.show(t),r=!0;break}r||e.go("welcome")}();
 },{"./route/index":"1l+7","./config":"yMXu"}],"NtIY":[function(require,module,exports) {
 module.exports=function(t){return fetch(t).then(function(t){return t.text()})};
 },{}],"ZgTD":[function(require,module,exports) {
@@ -70,4 +70,4 @@ module.exports=function(n){return new Promise(function(e,o){var r=document.creat
 },{}],0:[function(require,module,exports) {
 var b=require("Ak0P");b.register("html",require("NtIY"));b.register("js",require("ZgTD"));b.load([["welcome.1f10f5ea.html","Z0eu"]]).then(function(){require("Focm");});
 },{}]},{},[0], null)
-//# sourceMappingURL=stupppid.github.io.34933373.js.map
+//# sourceMappingURL=stupppid.github.io.3f9a7df1.js.map
