@@ -44,6 +44,13 @@ const map = {
     github: 'https://github.com/stupppid/oldTV',
     display: true,
     picture: require('/pages/oldTV/index.gif')
+  },
+  'ratta': {
+    page: import('/pages/ratta-console/index.html'),
+    script: import('/pages/ratta-console/index.js'),
+    github: 'https://github.com/stupppid/ratta-console',
+    display: true,
+    picture: require('/pages/ratta-console/index.png')
   }
 }
 

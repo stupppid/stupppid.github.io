@@ -30,6 +30,7 @@
     │  ├─oldTV
     │  ├─pingpong
     │  └─welcome
+    │  └─ratta
     ├─route     # 路由配置  
     ├─scss      # 样式  
     ├─static    # 静态文件  

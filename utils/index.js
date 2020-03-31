@@ -1,7 +1,0 @@
-function createRigidBody() {
-
-}
-
-module.exports = {
-
-}
