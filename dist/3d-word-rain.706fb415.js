@@ -9,4 +9,3 @@ let e=require("three"),t=require("./word"),n=require("./wordList"),o=function(i,
 },{"three":"VcYX","./word":"feTU","./wordList":"BtHR"}],"bcdP":[function(require,module,exports) {
 var e,r=require("3d-word-rain"),n=function(){var n=document.querySelector("div[page='3d-word-rain']");e&&e.scene?(n.appendChild(e.renderer.domElement),e.start()):(r.rain("./static/font/Arial_Bold.json",n),e=r.rain)};n.beforeLeave=function(){e.stop()},module.exports=n;
 },{"3d-word-rain":"p4Od"}]},{},["bcdP"], null)
-//# sourceMappingURL=3d-word-rain.8fc1565d.js.map

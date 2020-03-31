@@ -3,4 +3,3 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"H5TN":[function(require,module,exports) {
 "use strict";var e=o(require("oldtvdemo"));function o(e){return e&&e.__esModule?e:{default:e}}module.exports=function(){new e.default({id:"bell",overTime:9,reverse:!0},function(){console.log("time over, if you want to test again, you can click on the screen or run `bell.start()` on console.")}).start()};
 },{"oldtvdemo":"wY0Z"}]},{},["H5TN"], null)
-//# sourceMappingURL=oldTV.c31b9cdc.js.map
