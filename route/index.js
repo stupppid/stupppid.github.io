@@ -1,4 +1,4 @@
-// 使用import.then来懒加载其他页面, 但是必须指定文件名才行，parcel不支持动态变量引入
+// 使用import.then来懒加载其他页面, 但是必须指定文件名才行
 // todo 可以用node脚本来让这一块写的方便点
 
 // 配置项
@@ -45,7 +45,7 @@ const map = {
     display: true,
     picture: require('/pages/oldTV/index.gif')
   },
-  'ratta': {
+  'ratta-console': {
     page: import('/pages/ratta-console/index.html'),
     script: import('/pages/ratta-console/index.js'),
     github: 'https://github.com/stupppid/ratta-console',
