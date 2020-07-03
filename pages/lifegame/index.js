@@ -12,11 +12,11 @@ function initPersons (a, b, p, auto, t) {
   }
   function stopGo () {
     stop = true
-    document.getElementById('start').innerText = '开始'
+    document.getElementById('start').innerText = process.env.LANGUAGE === 'zh' ? '开始' : 'start'
   }
   function continueGo () {
     stop = false
-    document.getElementById('start').innerText = '暂停'
+    document.getElementById('start').innerText = process.env.LANGUAGE === 'zh' ? '暂停' : 'stop'
     nextTick = setTimeout(setWorld, t)
   }
   function initTable () {

@@ -1,6 +1,3 @@
 {
-  "title": {
-    "main": "ENJOY THE PEACEFUL TIM",
-    "lastLetter": "E"
-  }
+  "tip": "when time is over, if you want to test again, you can click on the screen or run `bell.start()` on console."
 }

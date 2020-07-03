@@ -1,0 +1,22 @@
+{
+  "form": {
+    "width": "width",
+    "height": "height",
+    "liveRate":"initial survival rate",
+    "interval":"interval",
+    "initialSet":"initial setting",
+    "apply": "apply"
+  },
+  "options": {
+    "start": "start",
+    "random": "random",
+    "slider": "slider",
+    "shadow": "shadow",
+    "clear": "clear"
+  },
+  "tip": {
+    "title": "Tips:",
+    "p1": "You can hold down the left mouse button to slide over the board or click the board to activate or deactivate the grid.",
+    "p2": "You need to reset the setting by click `start` button after changing the settings."
+  }
+}

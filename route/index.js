@@ -11,20 +11,20 @@
 
 const map = {
   'welcome': {
-    page: require('/pages/welcome/index.html'),
+    page: require('/pages/welcome/index.ejs'),
     script: require('/pages/welcome/index.js'),
     github: 'https://github.com/stupppid/stupppid.github.io',
     isHomepage: true
   },
   'pingpong': {
-    page: import('/pages/pingpong/index.html'),
+    page: import('/pages/pingpong/index.ejs'),
     script: import('/pages/pingpong/index.js'),
     display: true,
     picture: require('/pages/pingpong/index.png'),
     notFinished: true
   },
   'lifegame': {
-    page: import('/pages/lifegame/index.html'),
+    page: import('/pages/lifegame/index.ejs'),
     script: import('/pages/lifegame/index.js'),
     github: 'https://github.com/stupppid/lifegame',
     githubAddressColor: 'black',
@@ -39,7 +39,7 @@ const map = {
     picture: require('/pages/3d-word-rain/index.gif')
   },
   'oldTV': {
-    page: import('/pages/oldTV/index.html'),
+    page: import('/pages/oldTV/index.ejs'),
     script: import('/pages/oldTV/index.js'),
     github: 'https://github.com/stupppid/oldTV',
     display: true,

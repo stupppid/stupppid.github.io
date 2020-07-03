@@ -1,6 +1,3 @@
 {
-  "title": {
-    "main": "ENJOY THE PEACEFUL TIM",
-    "lastLetter": "E"
-  }
+  "tip": "时间截止之后, 如果想要重新尝试, 你可以用鼠标点击屏幕，或者在浏览器的控制台中输入 `bell.start()`."
 }

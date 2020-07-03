@@ -30,7 +30,7 @@
       height: 100vh;
       width: 100vw;
       position: fixed;
-      $arr: nth($snows, unquote($i));
+      $arr: nth($snows, $i);
       @include snow(nth($arr, 1),nth($arr, 2));
 
       $move-width: nth($arr, 3);

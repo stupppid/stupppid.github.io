@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="scss/index.css">
+    <link rel="stylesheet" href="scss/index.scss">
     <script>
-        if(!window.location.href.match('dist') && !window.location.href.match('localhost')) {
-          window.location.href = '/dist'
+        if(!window.location.href.match('dist') && !window.location.href.match('localhost')){
+            if (navigator.language === "zh-CN" ){
+              window.location.href = '/dist/zh'
+            } else {
+              window.location.href = '/dist/en'
+            }
         }
     </script>
 </head>

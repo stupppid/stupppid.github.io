@@ -8,8 +8,10 @@
   },
   "scripts": {
     "test": "test",
-    "build": "del /Q/S dist\\ && parcel build index.html --no-source-maps --public-url ./ && echo y|copy favicon.ico dist\\\\favicon.ico && xcopy /s static\\* dist\\static\\",
-    "dev": "parcel index.html --open"
+    "build:clean": "del /Q/S dist",
+    "build:en": "del /Q/S dist\\\\en && parcel build index.html --no-source-maps --public-url ./ --out-dir dist/en",
+    "build:zh": "del /Q/S dist\\\\zh && parcel build index.html --no-source-maps --public-url ./ --out-dir dist/zh",
+    "dev": "parcel index.html --out-dir devBuild --open"
   },
   "repository": {
     "type": "git",
@@ -28,11 +30,13 @@
     "cssnano": "^4.1.10",
     "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-node": "^9.2.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
-    "parcel-plugin-compress": "^1.1.0"
+    "parcel-plugin-compress": "^1.1.0",
+    "parcel-plugin-ejs-template": "^0.2.0",
+    "sass": "^1.26.9"
   },
   "dependencies": {
     "3d-word-rain": "^1.0.9",

@@ -6,7 +6,7 @@ let index = function () {
     rootElement.appendChild(rain.renderer.domElement)
     rain.start()
   } else {
-    wordRain.rain('./static/font/Arial_Bold.json', rootElement)
+    wordRain.rain('/static/font/Arial_Bold.json', rootElement)
     rain = wordRain.rain
   }
 }
