@@ -1,6 +1,6 @@
 # stupppid.github.io  -- 为酷炫而生
 
-[HOMEPAGE](https://stupppid.github.io/dist)
+[HOMEPAGE](https://stupppid.github.io/dist/zh)
 
 ## 开发须知
 
