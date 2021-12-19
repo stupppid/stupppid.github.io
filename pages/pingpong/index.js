@@ -294,4 +294,4 @@ index.beforeLeave = function() {
   stopFlag = true
 }
 
-module.exports = index
+module.exports = index 
