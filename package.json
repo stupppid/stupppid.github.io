@@ -47,6 +47,6 @@
     "oldtvdemo": "^1.0.1",
     "ratta": "^1.0.3",
     "ratta-console": "^1.0.2",
-    "three": "^0.104.0"
+    "three": "^0.137.0"
   }
 }
